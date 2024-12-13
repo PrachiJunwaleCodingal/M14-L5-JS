@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head> <title> Act1- JSON in JS</title></head>
+<body>
+    <h4>Convert JavaScript object into a JSON string</h4>
+    <p id="result"></p>
+    <script>
+        var obj = { student:"Prachi", place:"Mumbai"};
+        var json= JSON.stringify(obj);   //sending data
+        var newobj = JSON.parse(json);     //receiving data
+        document.getElementById("result").innerHTML = newobj.place;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Act3- JS Promise</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        function cal(x, y) {
+            var mult = x * y;
+            callback(mult);
+        }
+        function callback(res) {
+            document.getElementById("demo").innerHTML = res;
+        }
+
+        let promiseVar = new Promise(function (myResolve, myReject) {
+            let x = 20; // try x=20,other value
+
+            if (x == 100) {
+                myResolve("OK");
+            } else {
+                myReject("Error");
+            }
+        });
+
+        promiseVar.then(
+            function (value) { cal(20, 5); }, //success
+            function (error) { cal(error); } //  error
+        );
+    </script>
+</body>
+
+</html>
